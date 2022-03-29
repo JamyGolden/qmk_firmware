@@ -1,0 +1,1 @@
+qmk json2c -o ./keyboards/kinesis/keymaps/jamygolden/keymap.c ~/Downloads/jamygolden.json && rm -r ./.build && qmk compile && teensy_loader_cli --mcu=TEENSY41 -w ./.build/kinesis_kint41_jamygolden.hex

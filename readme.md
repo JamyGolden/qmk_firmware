@@ -34,3 +34,15 @@ QMK is developed and maintained by Jack Humbert of OLKB with contributions from 
 ## Official Website
 
 [qmk.fm](https://qmk.fm) is the official website of QMK, where you can find links to this page, the documentation, and the keyboards supported by QMK.
+
+## Personal instructions
+
+1. Create at keymap layout and download the json file from https://config.qmk.fm/#/kinesis/kint41/LAYOUT
+2. Convert json to a keymap file with cli or from https://config.qmk.fm/#/kinesis/kint41/LAYOUT and move to
+   `keyboards/kinesis/keymaps/jamygolden/keymap.c`
+3. `rm -r ./.build`
+4. `qmk compile`
+5. Press the `reset` button on the advantage2
+6. `teensy_loader_cli --mcu=TEENSY41 -w ./.build/kinesis_kint41_jamygolden.hex`
+7. Or all in one `qmk json2c -o
+   ./keyboards/kinesis/keymaps/jamygolden/keymap.c path/to/keymap.json && rm -r ./.build && qmk compile && teensy_loader_cli --mcu=TEENSY41 -w ./.build/kinesis_kint41_jamygolden.hex`
